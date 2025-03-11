@@ -169,7 +169,7 @@ contract OFTTest is TestHelperOz5 {
         assertEq(eMintBurnOFTAdapter.token(), address(eMintBurnERC20Mock));
 
         assertEq(dNativeOFTAdapter.approvalRequired(), false);
-        assertEq(eMintBurnOFTAdapter.approvalRequired(), false);
+        assertEq(eMintBurnOFTAdapter.approvalRequired(), true);
     }
 
     function test_oftVersion() public {
