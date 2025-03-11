@@ -60,7 +60,7 @@ abstract contract MintBurnOFTAdapter is OFTCore {
      * @dev In this MintBurnOFTAdapter, approval is NOT required because it uses mint and burn privileges.
      */
     function approvalRequired() external pure virtual returns (bool) {
-        return false;
+        return true;
     }
 
     /**
