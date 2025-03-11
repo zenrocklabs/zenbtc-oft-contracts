@@ -10,7 +10,7 @@ interface IMintableBurnable {
      * @param _amount Amount of tokens to be burned
      * @return success Indicates whether the operation was successful
      */
-    function burn(address _from, uint256 _amount) external returns (bool success);
+    function burnFrom(address _from, uint256 _amount) external returns (bool success);
 
     /**
      * @notice Mints tokens to a specified account

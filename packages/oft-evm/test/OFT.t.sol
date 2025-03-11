@@ -169,7 +169,7 @@ contract OFTTest is TestHelperOz5 {
         assertEq(eMintBurnOFTAdapter.token(), address(eMintBurnERC20Mock));
 
         assertEq(dNativeOFTAdapter.approvalRequired(), false);
-        assertEq(eMintBurnOFTAdapter.approvalRequired(), false);
+        assertEq(eMintBurnOFTAdapter.approvalRequired(), true);
     }
 
     function test_oftVersion() public {
@@ -522,7 +522,7 @@ contract OFTTest is TestHelperOz5 {
     function test_burn_operator() public {
         vm.prank(attacker);
         vm.expectRevert();
-        eMinterBurnerMock.burn(attacker, initialBalance);
+        eMinterBurnerMock.burnFrom(attacker, initialBalance);
     }
     
     function test_mint_burn_oft_adapter_debit() public virtual {

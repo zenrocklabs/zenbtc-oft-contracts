@@ -60,7 +60,7 @@ abstract contract MintBurnOFTAdapter is OFTCore {
      * @dev In this MintBurnOFTAdapter, approval is NOT required because it uses mint and burn privileges.
      */
     function approvalRequired() external pure virtual returns (bool) {
-        return false;
+        return true;
     }
 
     /**
@@ -86,7 +86,7 @@ abstract contract MintBurnOFTAdapter is OFTCore {
     ) internal virtual override returns (uint256 amountSentLD, uint256 amountReceivedLD) {
         (amountSentLD, amountReceivedLD) = _debitView(_amountLD, _minAmountLD, _dstEid);
         // Burns tokens from the caller.
-        minterBurner.burn(_from, amountSentLD);
+        minterBurner.burnFrom(_from, amountSentLD);
     }
 
     /**
