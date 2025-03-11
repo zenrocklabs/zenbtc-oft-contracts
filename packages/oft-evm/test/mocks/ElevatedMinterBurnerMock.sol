@@ -57,8 +57,8 @@ contract ElevatedMinterBurnerMock is IMintableBurnable, Operatable {
         token = token_;
     }
 
-    function burn(address from, uint256 amount) external override onlyOperators returns (bool) {
-        return token.burn(from, amount);
+    function burnFrom(address from, uint256 amount) external override onlyOperators returns (bool) {
+        return token.burnFrom(from, amount);
     }
 
     function mint(address to, uint256 amount) external override onlyOperators returns (bool) {

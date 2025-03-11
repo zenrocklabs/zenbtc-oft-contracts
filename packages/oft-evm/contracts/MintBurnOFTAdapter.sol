@@ -86,7 +86,7 @@ abstract contract MintBurnOFTAdapter is OFTCore {
     ) internal virtual override returns (uint256 amountSentLD, uint256 amountReceivedLD) {
         (amountSentLD, amountReceivedLD) = _debitView(_amountLD, _minAmountLD, _dstEid);
         // Burns tokens from the caller.
-        minterBurner.burn(_from, amountSentLD);
+        minterBurner.burnFrom(_from, amountSentLD);
     }
 
     /**

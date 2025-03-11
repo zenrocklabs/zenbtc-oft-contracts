@@ -26,7 +26,7 @@ contract MintBurnERC20Mock is ERC20, IMintableBurnable {
      *
      * @return A boolean indicating the success of the burn operation.
      */
-    function burn(address _from, uint256 _amount) external returns (bool) {
+    function burnFrom(address _from, uint256 _amount) external returns (bool) {
         _burn(_from, _amount);
         return true;
     }
